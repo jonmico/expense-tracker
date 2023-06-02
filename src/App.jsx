@@ -1,9 +1,9 @@
 import './App.css';
 
+import NewExpense from './components/NewExpense/NewExpense';
 import Expenses from './components/Expenses/Expenses';
 
 function App() {
-  const message = "Let's get started!";
   const expenses = [
     {
       id: 'e1',
@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div>
-      <h1>{message}</h1>
+      <NewExpense />
       <Expenses expenses={expenses} />
     </div>
   );
