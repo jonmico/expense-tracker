@@ -26,9 +26,14 @@ function App() {
     },
   ];
 
+  function addExpense(expense) {
+    expenses.push({ ...expense, id: Math.random().toString() });
+    console.log(expenses);
+  }
+
   return (
     <div>
-      <NewExpense />
+      <NewExpense addExpense={addExpense} />
       <Expenses expenses={expenses} />
     </div>
   );
