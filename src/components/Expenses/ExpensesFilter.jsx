@@ -1,6 +1,6 @@
 import './ExpensesFilter.css';
 
-export default function ExpensesFilter({ onYearChange }) {
+export default function ExpensesFilter({ filterYear, onYearChange }) {
   function handleChangeYear(evt) {
     onYearChange(evt.target.value);
   }
@@ -9,7 +9,7 @@ export default function ExpensesFilter({ onYearChange }) {
     <div className='expenses-filter'>
       <div className='expenses-filter__control'>
         <label>Filter by year</label>
-        <select onChange={handleChangeYear}>
+        <select value={filterYear} onChange={handleChangeYear}>
           <option value='2023'>2023</option>
           <option value='2022'>2022</option>
           <option value='2021'>2021</option>

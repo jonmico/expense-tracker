@@ -5,7 +5,7 @@ import './Expenses.css';
 import { useState } from 'react';
 
 export default function Expenses({ expenses }) {
-  const [year, setYear] = useState('');
+  const [year, setYear] = useState('2023');
 
   function changeFilterYear(filterYear) {
     setYear(filterYear);
@@ -14,7 +14,7 @@ export default function Expenses({ expenses }) {
   return (
     <div>
       <Card className='expenses'>
-        <ExpensesFilter onYearChange={changeFilterYear} />
+        <ExpensesFilter filterYear={year} onYearChange={changeFilterYear} />
         {expenses.map((expense) => (
           <ExpenseItem key={expense.id} expenseItem={expense} />
         ))}
