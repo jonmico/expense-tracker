@@ -18,7 +18,7 @@ export default function ExpenseForm({ onAddExpense, handleCancelClick }) {
     const { title, amount, date } = formData;
     const expenseData = {
       title,
-      amount,
+      amount: +amount,
       date: new Date(date),
     };
     onAddExpense(expenseData);
