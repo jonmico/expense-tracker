@@ -15,7 +15,13 @@ export default function ExpenseForm({ onAddExpense }) {
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    onAddExpense(formData);
+    const { title, amount, date } = formData;
+    const expenseData = {
+      title,
+      amount,
+      date: new Date(date),
+    };
+    onAddExpense(expenseData);
     setFormData({ title: '', amount: '', date: '' });
   }
 
